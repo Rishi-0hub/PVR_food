@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodExpress - Search</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🍴 FoodExpress</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="search.html">Search</a>
+        <a href="cart.html">🛒 Cart</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<section class="search-page">
+
+    <h1>Search Food</h1>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search Pizza, Burger, Biryani..."
+        onkeyup="searchFood()"
+    >
+
+    <div id="searchResults" class="food-container">
+
+        <div class="food-card" data-name="Pizza">
+            <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002">
+            <h3>Margherita Pizza</h3>
+            <p>Classic cheese pizza.</p>
+            <h4>₹249</h4>
+            <button onclick="addToCart('Margherita Pizza',249)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card" data-name="Burger">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+            <h3>Cheese Burger</h3>
+            <p>Juicy cheese burger.</p>
+            <h4>₹179</h4>
+            <button onclick="addToCart('Cheese Burger',179)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card" data-name="Biryani">
+            <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c">
+            <h3>Chicken Biryani</h3>
+            <p>Spicy chicken biryani.</p>
+            <h4>₹249</h4>
+            <button onclick="addToCart('Chicken Biryani',249)">
+                Add to Cart
+            </button>
+        </div>
+
+        <div class="food-card" data-name="Dosa">
+            <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976">
+            <h3>Masala Dosa</h3>
+            <p>Crispy South Indian dosa.</p>
+            <h4>₹120</h4>
+            <button onclick="addToCart('Masala Dosa',120)">
+                Add to Cart
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

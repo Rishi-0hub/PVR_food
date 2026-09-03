@@ -3,442 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie - Food Delivery System</title>
-
-    <link rel="stylesheet" href="style.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <title>FoodExpress - Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Navigation -->
-    <header class="header">
-        <nav class="navbar">
-
-            <div class="logo">
-                🍔 PVR FOODS
-            </div>
-
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#categories">Categories</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-
-            <button class="cart-btn" onclick="openCart()">
-                🛒 Cart
-                <span id="cart-count">0</span>
-            </button>
-
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-
-        <div class="hero-content">
-            <h1>Delicious Food<br>Delivered To Your Door</h1>
-
-            <p>
-                Order your favorite meals from the best restaurants
-                around you.
-            </p>
-
-            <a href="#menu" class="hero-btn">Order Now</a>
-        </div>
-
-        <div class="hero-image">
-            🍕
-        </div>
-
-    </section>
-
-    <!-- Search -->
-    <section class="search-section">
-
-        <div class="search-box">
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Search for food..."
-                onkeyup="searchFood()">
-
-            <button onclick="searchFood()">🔍</button>
-        </div>
-
-    </section>
-
-    <!-- Categories -->
-    <section class="section" id="categories">
-
-        <h2 class="section-title">Food Categories</h2>
-
-        <div class="categories">
-
-            <button class="category active" onclick="filterFood('all', this)">
-                🍽️ All
-            </button>
-
-            <button class="category" onclick="filterFood('pizza', this)">
-                🍕 Pizza
-            </button>
-
-            <button class="category" onclick="filterFood('burger', this)">
-                🍔 Burger
-            </button>
-
-            <button class="category" onclick="filterFood('biryani', this)">
-                🍛 Biryani
-            </button>
-
-            <button class="category" onclick="filterFood('dessert', this)">
-                🍰 Dessert
-            </button>
-
-            <button class="category" onclick="filterFood('drinks', this)">
-                🥤 Drinks
-            </button>
-
-        </div>
-
-    </section>
-
-    <!-- Menu -->
-    <section class="section" id="menu">
-
-        <h2 class="section-title">Popular Food</h2>
-
-        <div class="food-container" id="foodContainer">
-
-            <!-- Food Card -->
-            <div class="food-card" data-category="pizza" data-name="Margherita Pizza">
-
-                <div class="food-image pizza">
-                    🍕
-                </div>
-
-                <div class="food-info">
-                    <h3>Margherita Pizza</h3>
-
-                    <p>Fresh cheese, tomato and basil</p>
-
-                    <div class="food-bottom">
-                        <span class="price">₹299</span>
-
-                        <button onclick="addToCart('Margherita Pizza', 299)">
-                            Add +
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Food Card -->
-            <div class="food-card" data-category="burger" data-name="Cheese Burger">
-
-                <div class="food-image burger">
-                    🍔
-                </div>
-
-                <div class="food-info">
-                    <h3>Cheese Burger</h3>
-
-                    <p>Juicy chicken burger with cheese</p>
-
-                    <div class="food-bottom">
-                        <span class="price">₹199</span>
-
-                        <button onclick="addToCart('Cheese Burger', 199)">
-                            Add +
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Food Card -->
-            <div class="food-card" data-category="biryani" data-name="Chicken Biryani">
-
-                <div class="food-image biryani">
-                    🍛
-                </div>
-
-                <div class="food-info">
-                    <h3>Chicken Biryani</h3>
-
-                    <p>Traditional spicy chicken biryani</p>
-
-                    <div class="food-bottom">
-                        <span class="price">₹249</span>
-
-                        <button onclick="addToCart('Chicken Biryani', 249)">
-                            Add +
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Food Card -->
-            <div class="food-card" data-category="pizza" data-name="Farmhouse Pizza">
-
-                <div class="food-image pizza">
-                    🍕
-                </div>
-
-                <div class="food-info">
-                    <h3>Farmhouse Pizza</h3>
-
-                    <p>Loaded with fresh vegetables</p>
-
-                    <div class="food-bottom">
-                        <span class="price">₹349</span>
-
-                        <button onclick="addToCart('Farmhouse Pizza', 349)">
-                            Add +
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Food Card -->
-            <div class="food-card" data-category="burger" data-name="Veg Burger">
-
-                <div class="food-image burger">
-                    🍔
-                </div>
-
-                <div class="food-info">
-                    <h3>Veg Burger</h3>
-
-                    <p>Crispy vegetable patty with fresh salad</p>
-
-                    <div class="food-bottom">
-                        <span class="price">₹149</span>
-
-                        <button onclick="addToCart('Veg Burger', 149)">
-                            Add +
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Food Card -->
-            <div class="food-card" data-category="biryani" data-name="Veg Biryani">
-
-                <div class="food-image biryani">
-                    🍛
-                </div>
-
-                <div class="food-info">
-                    <h3>Veg Biryani</h3>
-
-                    <p>Flavorful basmati rice with vegetables</p>
-
-                    <div class="food-bottom">
-                        <span class="price">₹179</span>
-
-                        <button onclick="addToCart('Veg Biryani', 179)">
-                            Add +
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Food Card -->
-            <div class="food-card" data-category="dessert" data-name="Chocolate Cake">
-
-                <div class="food-image dessert">
-                    🍰
-                </div>
-
-                <div class="food-info">
-                    <h3>Chocolate Cake</h3>
-
-                    <p>Soft and delicious chocolate cake</p>
-
-                    <div class="food-bottom">
-                        <span class="price">₹129</span>
-
-                        <button onclick="addToCart('Chocolate Cake', 129)">
-                            Add +
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Food Card -->
-            <div class="food-card" data-category="drinks" data-name="Cold Drink">
-
-                <div class="food-image drinks">
-                    🥤
-                </div>
-
-                <div class="food-info">
-                    <h3>Cold Drink</h3>
-
-                    <p>Refreshing chilled soft drink</p>
-
-                    <div class="food-bottom">
-                        <span class="price">₹79</span>
-
-                        <button onclick="addToCart('Cold Drink', 79)">
-                            Add +
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <p id="noResults" class="no-results">
-            No food items found.
-        </p>
-
-    </section>
-
-    <!-- About -->
-    <section class="about" id="about">
+<header>
+    <div class="logo">🍴 FoodExpress</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="search.html">Search</a>
+        <a href="cart.html">🛒 Cart</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Delicious Food Delivered To You</h1>
+        <p>Order your favorite meals anytime, anywhere.</p>
+
+        <a href="menu.html">
+            <button>Order Now</button>
+        </a>
+    </div>
+</section>
+
+<section class="categories">
+    <h2>Popular Categories</h2>
+
+    <div class="category-container">
+
+        <a href="menu.html?category=Pizza">🍕 Pizza</a>
+        <a href="menu.html?category=Burger">🍔 Burgers</a>
+        <a href="menu.html?category=Biryani">🍛 Biryani</a>
+        <a href="menu.html?category=Chinese">🥡 Chinese</a>
+        <a href="menu.html?category=South Indian">🥘 South Indian</a>
+        <a href="menu.html?category=North Indian">🍲 North Indian</a>
+
+    </div>
+</section>
+
+<section class="about">
+    <h2>Why Choose FoodExpress?</h2>
+
+    <div class="features">
 
         <div>
-            <h2>Why Choose Foodie?</h2>
-
-            <p>
-                Foodie makes ordering your favorite food simple and fast.
-                Choose from a wide variety of delicious meals and get
-                them delivered right to your doorstep.
-            </p>
+            <h3>🚴 Fast Delivery</h3>
+            <p>Get your food delivered quickly.</p>
         </div>
 
-        <div class="features">
-
-            <div>
-                <span>🚀</span>
-                <h3>Fast Delivery</h3>
-                <p>Quick and reliable delivery.</p>
-            </div>
-
-            <div>
-                <span>🍴</span>
-                <h3>Quality Food</h3>
-                <p>Fresh and tasty meals.</p>
-            </div>
-
-            <div>
-                <span>💳</span>
-                <h3>Easy Payment</h3>
-                <p>Simple checkout process.</p>
-            </div>
-
+        <div>
+            <h3>🍽️ Quality Food</h3>
+            <p>Fresh and delicious food from restaurants.</p>
         </div>
 
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <h2>🍔 Foodie</h2>
-        <p>Delicious food delivered with love.</p>
-        <p>© 2026 Foodie. All Rights Reserved.</p>
-    </footer>
-
-
-    <!-- Cart Sidebar -->
-    <div class="overlay" id="overlay" onclick="closeCart()"></div>
-
-    <aside class="cart" id="cart">
-
-        <div class="cart-header">
-            <h2>Your Cart</h2>
-
-            <button onclick="closeCart()">✕</button>
-        </div>
-
-        <div id="cartItems" class="cart-items">
-            <p class="empty-cart">Your cart is empty.</p>
-        </div>
-
-        <div class="cart-footer">
-
-            <div class="total">
-                <span>Total:</span>
-                <strong id="cartTotal">₹0</strong>
-            </div>
-
-            <button class="checkout-btn" onclick="openCheckout()">
-                Proceed to Checkout
-            </button>
-
-        </div>
-
-    </aside>
-
-
-    <!-- Checkout Modal -->
-    <div class="modal-overlay" id="checkoutModal">
-
-        <div class="checkout-modal">
-
-            <button class="close-modal" onclick="closeCheckout()">
-                ✕
-            </button>
-
-            <h2>Checkout</h2>
-
-            <form onsubmit="placeOrder(event)">
-
-                <label>Full Name</label>
-                <input
-                    type="text"
-                    id="customerName"
-                    placeholder="Enter your name"
-                    required>
-
-                <label>Phone Number</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    placeholder="Enter phone number"
-                    required>
-
-                <label>Delivery Address</label>
-                <textarea
-                    id="address"
-                    placeholder="Enter delivery address"
-                    required></textarea>
-
-                <label>Payment Method</label>
-
-                <select id="payment">
-                    <option value="Cash on Delivery">
-                        Cash on Delivery
-                    </option>
-
-                    <option value="UPI">
-                        UPI
-                    </option>
-
-                    <option value="Card">
-                        Credit / Debit Card
-                    </option>
-                </select>
-
-                <button type="submit" class="place-order">
-                    Place Order
-                </button>
-
-            </form>
-
+        <div>
+            <h3>💰 Best Prices</h3>
+            <p>Affordable prices and exciting offers.</p>
         </div>
 
     </div>
+</section>
+
+<footer>
+    <p>© 2026 FoodExpress | Food Delivery System</p>
+</footer>
+
+</body>
+</html>
+              
+
+           
+           
